@@ -1,0 +1,194 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600&display=swap');
+body{
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: rgb(84, 82, 82);
+    font-family: 'Rubik', sans-serif;
+}
+.container{
+    display: flex; 
+    background-color: rgb(36, 36, 36);
+    position: relative;
+    width: 400px;
+    height: 600px;
+    border-radius: 8px;
+    text-align: center;
+    justify-content: center;
+    padding-top: 30px;
+    overflow: hidden;
+}
+.rot1{
+    display: flex; 
+    position: absolute;
+    background-color: rgb(72, 72, 72);
+    z-index: -1;
+    transform: rotate(15deg);
+    width: 400px;
+    height: 600px;
+    border-radius: 8px;
+    text-align: center;
+    justify-content: center;
+    padding-top: 30px;
+    transition-delay: 1s;
+    transition: 1.5s ease-in-out;
+}
+.rot2{
+    display: flex; 
+    position: absolute;
+    background-color: rgb(74, 74, 74);
+    z-index: -1;
+    transform: rotate(-15deg);
+    width: 400px;
+    height: 600px;
+    border-radius: 8px;
+    text-align: center;
+    justify-content: center;
+    padding-top: 30px;
+    transition-delay: 0.25s;
+    transition: 1.5s ease-in-out;
+}
+.container::before{
+    content: '';
+    width: 400px;
+    height: 600px;
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    border-radius: 8px;
+    background: linear-gradient(0deg, transparent,rgb(199, 2, 199),rgb(199, 2, 199), rgb(199, 2, 199));
+    animation: animate 6s linear infinite;
+    transform-origin: bottom right;
+}
+.container::after{
+    content: '';
+    width: 400px;
+    height: 600px;
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    border-radius: 8px;
+    background: linear-gradient(0deg, transparent, rgb(199, 2, 199), rgb(199, 2, 199), rgb(199, 2, 199));
+    animation: animate 6s linear infinite;
+    transform-origin: bottom right;
+    animation-delay: -3s;
+}
+@keyframes animate {
+    0%{
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+}
+.incontainer{
+    position: absolute;
+    z-index: 10;
+    background: rgb(36, 36, 36);
+    inset: 3px;
+    border-radius: 10px;
+    text-align: center;
+    justify-content: center;
+}
+.Signin{
+    color: rgb(199, 2, 199);
+    font-weight: 500;
+    padding-top: 15%;
+    font-size: 220%;
+    margin-bottom: 20%;
+}
+.container input{
+    margin-bottom: 10%;
+    width: 70%;
+    height: 7%;
+    border-radius: 6px;
+    border: none;
+    outline: none;
+    font-size: 1rem;
+    letter-spacing: 0.05px;
+    background: transparent;
+    z-index: 1;
+    padding-left: 10px;
+}
+.container span{
+    position: absolute;
+    left: 13%;
+    padding: 10px;
+    font-size: 1rem;
+    color: grey;
+    pointer-events: none;
+    font-size: 1.2rem;
+    transition: 0.5s;
+}
+.container input:valid ~ span,
+.container input:focus ~ span
+{
+    color:rgb(199, 2, 199);
+    transform: translateY(-80%);
+    font-size: 1rem;
+    /* padding-bottom: 0%; */
+}
+.links{
+    display: block;
+    padding-top: 10px;
+}
+a{
+    color: grey;
+    text-decoration: none;
+}
+a:hover{
+    color: rgb(199, 2, 199);
+}
+
+.container i{
+    position: absolute;
+    left: 15%;
+    /* bottom: 58%; */
+    width: 70%;
+    height: 2px;
+    background: rgb(199, 2, 199);
+    border-radius: 4px;
+    transition: 0.5s;
+    pointer-events: none;
+}
+/* i.down{
+    bottom: 45%;
+} */
+.container input:valid ~ i,
+.container input:focus ~ i
+{
+    height: 44px;
+}
+label.submit{
+    background-color: aliceblue;
+    font-size: larger;
+    width: 50%;
+    height: 7%;
+}
+
+.btn{
+    color: rgb(199, 2, 199);
+    background-color: transparent;
+    border-color: rgb(199, 2, 199);
+    margin-top: 50px;
+}
+.btn:hover{
+    color: white;
+    background-color: rgb(199, 2, 199);
+    border-color: rgb(199, 2, 199);
+}
+@media only screen and (max-width: 600px) {
+    .container{
+        width: 80%;
+        height: 70%;
+    }
+    .container i{
+        width: 80%;
+        left: 10%;
+    }
+    .container span{
+        left: 10%;
+    }
+  }
