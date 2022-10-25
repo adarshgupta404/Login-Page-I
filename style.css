@@ -104,9 +104,10 @@ body{
     width: 70%;
     height: 7%;
     border-radius: 6px;
+    color: white;
     border: none;
     outline: none;
-    font-size: 1rem;
+    font-size: 1.1rem;
     letter-spacing: 0.05px;
     background: transparent;
     z-index: 1;
@@ -152,6 +153,7 @@ a:hover{
     border-radius: 4px;
     transition: 0.5s;
     pointer-events: none;
+    z-index: -1;
 }
 /* i.down{
     bottom: 45%;
